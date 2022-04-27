@@ -1,0 +1,14 @@
+form{
+    border: 1px solid gray;
+    padding: 30px;
+}
+
+form input{
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 15px;
+}
+.submit-btn{
+    margin: 10px;
+    border: none;
+}
