@@ -3,11 +3,32 @@ import user from '../../logos/users-alt 1.png'
 import logo from '../../logos/plus 1.png'
 import './Events.css';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const Events = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
     const [selectedImage, setSelectedImage] = useState(false);
+
+    const onSubmit = data => {
+        const events = data.data;
+        axios.post('http://localhost:5000/events', (events))
+            .then(res => {
+                console.log(res);
+            })
+
+        // fetch('http://localhost:5000/events', {
+        //     method: 'POST', // or 'PUT'
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log('Success:', data);
+        //     })
+    }
+
     return (
         <div>
             <div className="container">
@@ -22,17 +43,18 @@ const Events = () => {
                             <p className='text-primary'>Add Events</p>
                         </div>
                     </div>
-                    <div className="col-lg-8 bg-color p-4" >
+                    <div className="col-lg-8 bg-color p-5" >
+
                         <form onSubmit={handleSubmit(onSubmit)} >
                             <div className="row bg-white rounded-3 p-4">
                                 <div className='col-md-6'>
                                     <div className='input-style mb-3'>
                                         <label className='title-style mb-1' style={{ display: "block" }}>Event Title</label>
-                                        <input style={{ width: '100%' }} placeholder='Event Title' {...register("event-title", { required: true })} />
+                                        <input style={{ width: '100%' }} placeholder='Event Title' {...register("name", { required: true })} />
                                     </div>
                                     <div className='mb-3'>
                                         <label className='title-style mb-1' style={{ display: "block" }}>Description</label>
-                                        <textarea style={{ width: '100%' }} placeholder='Description' {...register("description")} />
+                                        <textarea style={{ width: '100%', height: "100px" }} placeholder='Description' {...register("description")} />
                                     </div>
                                 </div>
                                 <div className='col-md-6'>
@@ -44,7 +66,7 @@ const Events = () => {
                                         <div>
                                             <label className='title-style mb-1' style={{ width: "50%", display: "block" }}>Banner</label>
                                             <input
-                                                style={{ width: "50%"}}
+                                                style={{ width: "50%" }}
                                                 type="file"
                                                 name="myImage"
                                                 onChange={(event) => {
@@ -53,7 +75,7 @@ const Events = () => {
                                                 }}
                                             />
                                         </div>
-                                        <div className=' mt-3'>
+                                        <div className='mt-3'>
                                             {
                                                 selectedImage && (
                                                     <div>
@@ -64,8 +86,13 @@ const Events = () => {
                                                 )}
                                         </div>
                                     </div>
+
+                                </div>
+                                <div className='w-50'>
+                                    <input className='btn btn-primary' type="submit" />
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>

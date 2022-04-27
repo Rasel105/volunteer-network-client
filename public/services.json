@@ -2,32 +2,38 @@
     {
         "id": 1,
         "name": "ENGINE DIAGNOSTIC",
-        "img": "https://i.ibb.co/ZH86RgR/animal-Shelter.png"
+        "img": "https://i.ibb.co/ZH86RgR/animal-Shelter.png",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus."
     },
 
     {
         "id": 2,
         "name": "ENGINE DIAGNOSTIC",
-        "img": "https://i.ibb.co/BB0hQq9/study-Group.png"
+        "img": "https://i.ibb.co/BB0hQq9/study-Group.png",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus."
     },
     {
         "id": 3,
         "name": "ENGINE DIAGNOSTIC",
-        "img": "https://i.ibb.co/JdqtQ6N/vote-Register.png"
+        "img": "https://i.ibb.co/JdqtQ6N/vote-Register.png",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus."
     },
     {
         "id": 4,
         "name": "ENGINE DIAGNOSTIC",
-        "img": "https://i.ibb.co/7jSS77r/good-Education.png"
+        "img": "https://i.ibb.co/7jSS77r/good-Education.png",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus."
     },
     {
         "id": 5,
         "name": "ENGINE DIAGNOSTIC",
-        "img": "https://i.ibb.co/swnjkRk/library-Books.png"
+        "img": "https://i.ibb.co/swnjkRk/library-Books.png",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus."
     },
     {
         "id": 6,
         "name": "ENGINE DIAGNOSTIC",
-        "img": "https://i.ibb.co/KxCS824/newBooks.png"
+        "img": "https://i.ibb.co/KxCS824/newBooks.png",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ducimus."
     }
 ]

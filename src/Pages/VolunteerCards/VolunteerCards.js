@@ -6,7 +6,7 @@ const VolunteerCards = () => {
     const [volunteers, setVolunteers] = useState([]);
 
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/events')
             .then(res => res.json())
             .then(data => setVolunteers(data));
     }, []);

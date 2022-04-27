@@ -4,17 +4,29 @@ import './Register.css'
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        fetch('http://localhost:5000/register', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+    }
 
     return (
         <form id='register-style' onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-50 mx-auto mt-3">
             <h1 className='mb-4'>Register as a Volunteer</h1>
-            <input placeholder='Full Name' {...register("FullName", { required: true })} />
-            <input placeholder='Username or Email' {...register("Username", { required: true })} />
-            <input placeholder='Date' type="number" {...register("Date", { required: true })} />
+            <input placeholder='Full Name' {...register("fullName", { required: true })} />
+            <input placeholder='Username or Email' {...register("email", { required: true })} />
+            <input placeholder='Date' type="date" {...register("date", { required: true })} />
             <input placeholder='Desicription' {...register("Desicription", { required: true })} />
-            <input placeholder='Organize books at the library' {...register("Organize", { required: true })} />
-            <input className='submit-btn mt-3 btn btn-primary p-3' type="submit" value="Register"/>
+            <input placeholder='Organize books at the library' {...register("organize", { required: true })} />
+            <input className='submit-btn mt-3 btn btn-primary p-3' type="submit" value="Register" />
         </form>
     );
 };
