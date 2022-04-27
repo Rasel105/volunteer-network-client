@@ -1,13 +1,13 @@
 import React from 'react';
 import volunteer from '../../images/extraVolunteer.png'
-import './Donation.css'
+import './Donation.module.css'
 
 const Donation = () => {
     return (
-        <div className='container donation-bg w-100 mx-auto'>
+        <div className='container donation-bg w-100 mx-auto d-flex align-items-center justify-content-center    '>
             <div class="row g-3" >
                 <div class="col-md-6" >
-                    <div class="card" style={{ width: "22rem" }} >
+                    <div class="card" style={{ width: "23rem" }} >
                         <div class="card-body position-relative d-flex">
                             <div>
                                 <img style={{ width: "150px" }} src={volunteer} alt="" />
@@ -21,7 +21,7 @@ const Donation = () => {
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card " style={{ width: "22rem" }} >
+                    <div class="card " style={{ width: "23rem" }} >
                         <div class="card-body position-relative d-flex">
                             <div>
                                 <img style={{ width: "150px" }} src={volunteer} alt="" />
@@ -35,7 +35,7 @@ const Donation = () => {
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card " style={{ width: "22rem" }} >
+                    <div class="card " style={{ width: "23rem" }} >
                         <div class="card-body position-relative d-flex">
                             <div>
                                 <img style={{ width: "150px" }} src={volunteer} alt="" />
@@ -49,7 +49,7 @@ const Donation = () => {
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card " style={{ width: "22rem" }} >
+                    <div class="card " style={{ width: "23rem" }} >
                         <div class="card-body position-relative d-flex">
                             <div>
                                 <img style={{ width: "150px" }} src={volunteer} alt="" />

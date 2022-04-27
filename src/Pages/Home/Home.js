@@ -8,7 +8,7 @@ const Home = () => {
         <div>
             <SearchBar />
             <VolunteerCards/>
-            {/* <UploadAndDisplayImage></UploadAndDisplayImage> */}
+            <UploadAndDisplayImage></UploadAndDisplayImage>
         </div>
     );
 };

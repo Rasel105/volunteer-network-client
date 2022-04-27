@@ -1,9 +1,9 @@
-.width-class {
+#search-style {
     width: 470px;
     height: 50px;
 }
 
-.heading-style {
+#heading-style {
     font-style: normal;
     font-weight: 700;
     font-size: 36px;

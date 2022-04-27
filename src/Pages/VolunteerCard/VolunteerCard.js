@@ -2,6 +2,7 @@ import React from 'react';
 
 const VolunteerCard = ({ volunteer }) => {
         const { name, img } = volunteer;
+        
     return (
         <div className='g-5 col-sm-12 col-md-3 col-lg-3'>
             <div className="card" style={{ width: "16rem" }}>

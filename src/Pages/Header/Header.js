@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Header.css'
-import logo from '../../logos/logo.png'
+import './Header.css';
+import logo from '../../logos/logo.png';
 
 const Header = () => {
     return (
@@ -11,7 +11,7 @@ const Header = () => {
                 <Container>
                     <Navbar.Brand href="#home">
                         <Link to='/'>
-                            <img className='logo-img' src={logo} alt="" />
+                            <img style={{height: '50px'}} className='logo-img' src={logo} alt="" />
                         </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle className='bg-dark' aria-controls="responsive-navbar-nav" />

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import './Register.module.css'
+import './Register.css'
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => console.log(data);
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-50 mx-auto">
+        <form id='register-style' onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-50 mx-auto mt-3">
             <h1 className='mb-4'>Register as a Volunteer</h1>
             <input placeholder='Full Name' {...register("FullName", { required: true })} />
             <input placeholder='Username or Email' {...register("Username", { required: true })} />
