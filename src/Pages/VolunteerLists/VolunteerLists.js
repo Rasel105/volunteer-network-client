@@ -4,6 +4,10 @@ import { useForm } from 'react-hook-form';
 import user from '../../logos/users-alt 1.png'
 import logo from '../../logos/plus 1.png'
 import './VolunteerLists.css'
+import { AiFillDelete } from "react-icons/ai";
+import { FiEdit } from "react-icons/fi";
+import { Link } from 'react-router-dom';
+import RegisterUpdateModal from '../RegisterUpdateModal/RegisterUpdateModal';
 
 const VolunteerLists = () => {
     const [users, setUsers] = useState([]);
@@ -11,10 +15,42 @@ const VolunteerLists = () => {
         fetch('http://localhost:5000/register')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setUsers(data)
             })
-    }, [])
+    }, [users]);
+
+    const handleDeleteUser = id => {
+        const proceed = window.confirm("Are you sure to delete the user?");
+        if (proceed) {
+            fetch(`http://localhost:5000/register/${id}`, {
+                method: 'DELETE',
+            })
+                .then(res => {
+                    return res.json()
+                })
+                .then(data => {
+                    console.log(data);
+
+                });
+        }
+    }
+
+    const hanldeUpdateUser = id => {
+        console.log(id);
+        fetch('https://example.com/profile', {
+            method: 'PUT', // or 'POST'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+    }
+
+
     return (
         <div>
             <div className="container">
@@ -26,7 +62,9 @@ const VolunteerLists = () => {
                         </div>
                         <div className='d-flex'>
                             <img style={{ width: "20px", height: "20px" }} className="me-2" src={logo} alt="" />
-                            <p className='text-primary'>Add Events</p>
+                            <Link to='/register' style={{ textDecoration: "none" }}>
+                                <p className='event-text'>Add event</p>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-lg-8" >
@@ -71,7 +109,13 @@ const VolunteerLists = () => {
                                             <td>{user.email}</td>
                                             <td>{user.date}</td>
                                             <td>{user.organize}</td>
-                                            <button className='btn btn-danger'>Delete</button>
+                                            <button onClick={() => handleDeleteUser(user._id)} className='delete-icon p-0 me-2'>
+                                                <AiFillDelete />
+                                            </button>
+                                            <button onClick={() => hanldeUpdateUser(user._id)} className='update-icon p-0'>
+                                                <FiEdit />
+                                                {/* <RegisterUpdateModal/> */}
+                                            </button>
                                         </tr>
                                     )}
                             </tbody>

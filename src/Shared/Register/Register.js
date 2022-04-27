@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import './Register.css'
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data, e) => {
         fetch('http://localhost:5000/register', {
             method: 'POST', // or 'PUT'
             headers: {
@@ -15,6 +15,7 @@ const Register = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                e.target.reset();
             })
     }
 

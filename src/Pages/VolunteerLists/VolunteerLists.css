@@ -1,3 +1,14 @@
 .tableHeader{
     background: rgb(223, 217, 217);
 }
+.delete-icon{
+    border: none;
+    color: red;
+    font-size: 25px;
+}
+.update-icon{
+    border: none;
+    color: blue;
+    font-size: 25px;
+    padding: 0px;
+}
