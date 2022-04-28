@@ -35,22 +35,6 @@ const VolunteerLists = () => {
         }
     }
 
-    const hanldeUpdateUser = id => {
-        console.log(id);
-        fetch('https://example.com/profile', {
-            method: 'PUT', // or 'POST'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-    }
-
-
     return (
         <div>
             <div className="container">
@@ -112,9 +96,8 @@ const VolunteerLists = () => {
                                             <button onClick={() => handleDeleteUser(user._id)} className='delete-icon p-0 me-2'>
                                                 <AiFillDelete />
                                             </button>
-                                            <button onClick={() => hanldeUpdateUser(user._id)} className='update-icon p-0'>
-                                                <FiEdit />
-                                                {/* <RegisterUpdateModal/> */}
+                                            <button className='update-icon p-0'>
+                                                <RegisterUpdateModal user={user}/>
                                             </button>
                                         </tr>
                                     )}
