@@ -96,7 +96,7 @@ const VolunteerLists = () => {
                                 <tr>
                                     <th scope="col">Full Name</th>
                                     <th scope="col">Email ID</th>
-                                    <th scope="col">Registation Date</th>
+                                    <th scope="col">Reg: Date</th>
                                     <th scope="col">Volunteer List</th>
                                     <th scope="col">Action</th>
                                 </tr>

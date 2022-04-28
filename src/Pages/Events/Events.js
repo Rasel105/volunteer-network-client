@@ -69,7 +69,7 @@ const Events = () => {
                                         <input style={{ width: '100%' }} placeholder='Event Title' type="date" {...register("date")} />
                                     </div>
                                     <div className='mb-3'>
-                                        <label className='title-style' style={{ display: "block" }}>Description</label>
+                                        <label className='title-style' style={{ display: "block" }}>Img Link</label>
                                         <input style={{ width: '100%'}} placeholder='Upload IMG Link' {...register("img")} />
                                     </div>
                                     {/* 
