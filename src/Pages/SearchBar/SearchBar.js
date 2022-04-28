@@ -14,6 +14,7 @@ const SearchBar = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundImage: `url(${Background})`,
+        opacity: '0.5'
     }
 
     return (

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import './Register.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
@@ -15,6 +19,7 @@ const Register = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                toast("Registation Successfull.")
                 e.target.reset();
             })
     }
@@ -29,6 +34,7 @@ const Register = () => {
             <input placeholder='Desicription' {...register("Desicription", { required: true })} />
             <input placeholder='Organize books at the library' {...register("organize", { required: true })} />
             <input className='submit-btn mt-3 btn btn-primary p-3' type="submit" value="Register" />
+            <ToastContainer />
         </form>
     );
 };

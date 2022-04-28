@@ -4,12 +4,16 @@ import logo from '../../logos/plus 1.png'
 import './Events.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Events = () => {
     const { register, handleSubmit } = useForm();
     const [selectedImage, setSelectedImage] = useState(false);
 
-    const onSubmit = data => {
+    const onSubmit = (data, e) => {
         // const events = data.data;
         // axios.post('http://localhost:5000/events', (events))
         //     .then(res => {
@@ -26,6 +30,8 @@ const Events = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                e.target.reset();
+                toast("Data inserted!")
             })
     }
 
@@ -105,6 +111,7 @@ const Events = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };
