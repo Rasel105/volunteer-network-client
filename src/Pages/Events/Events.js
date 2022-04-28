@@ -10,23 +10,23 @@ const Events = () => {
     const [selectedImage, setSelectedImage] = useState(false);
 
     const onSubmit = data => {
-        const events = data.data;
-        axios.post('http://localhost:5000/events', (events))
-            .then(res => {
-                console.log(res);
-            })
-
-        // fetch('http://localhost:5000/events', {
-        //     method: 'POST', // or 'PUT'
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data),
-        // })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log('Success:', data);
+        // const events = data.data;
+        // axios.post('http://localhost:5000/events', (events))
+        //     .then(res => {
+        //         console.log(res);
         //     })
+
+        fetch('http://localhost:5000/events', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
     }
 
     return (
@@ -62,6 +62,13 @@ const Events = () => {
                                         <label className='title-style mb-1' style={{ display: "block" }}>Event Date</label>
                                         <input style={{ width: '100%' }} placeholder='Event Title' type="date" {...register("date")} />
                                     </div>
+                                    <div className='mb-3'>
+                                        <label className='title-style' style={{ display: "block" }}>Description</label>
+                                        <input style={{ width: '100%'}} placeholder='Upload IMG Link' {...register("img")} />
+                                    </div>
+                                    {/* 
+                                    this code snippet below is for the upload image
+
                                     <div className='d-flex'>
                                         <div>
                                             <label className='title-style mb-1' style={{ width: "50%", display: "block" }}>Banner</label>
@@ -75,6 +82,7 @@ const Events = () => {
                                                 }}
                                             />
                                         </div>
+                                        this code snippet below is for the upload image
                                         <div className='mt-3'>
                                             {
                                                 selectedImage && (
@@ -85,7 +93,7 @@ const Events = () => {
                                                     </div>
                                                 )}
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                                 <div className='w-50'>

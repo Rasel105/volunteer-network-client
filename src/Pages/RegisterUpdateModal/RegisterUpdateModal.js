@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { FiEdit } from "react-icons/fi";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const RegisterUpdateModal = ({ user }) => {
     const [show, setShow] = useState(false);
@@ -21,9 +24,11 @@ const RegisterUpdateModal = ({ user }) => {
             .then(data => {
                 console.log('Success:', data);
                 handleClose();
+                toast("Data updated");
             })
     }
 
+                     
     return (
         <div>
             <>
@@ -39,7 +44,7 @@ const RegisterUpdateModal = ({ user }) => {
                             <input placeholder='Date' type="date" {...register("date", { required: true })} />
                             <input placeholder='Desicription' {...register("Desicription", { required: true })} />
                             <input placeholder='Organize books at the library' {...register("organize", { required: true })} />
-                            <input className='submit-btn mt-3 btn btn-primary p-3' type="submit" value="Register" />
+                            <input className='submit-btn mt-3 btn btn-primary p-3' type="submit" value="Update" />
                         </form>
                     </Modal.Body>
                     <Modal.Footer>
@@ -49,6 +54,7 @@ const RegisterUpdateModal = ({ user }) => {
                     </Modal.Footer>
                 </Modal>
             </>
+            <ToastContainer />
         </div>
     );
 };

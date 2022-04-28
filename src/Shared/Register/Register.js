@@ -19,6 +19,7 @@ const Register = () => {
             })
     }
 
+
     return (
         <form id='register-style' onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column w-50 mx-auto mt-3">
             <h1 className='mb-4'>Register as a Volunteer</h1>
