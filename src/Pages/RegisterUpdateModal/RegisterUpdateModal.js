@@ -3,29 +3,26 @@ import { Button, Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { FiEdit } from "react-icons/fi";
 
-const RegisterUpdateModal = () => {
+const RegisterUpdateModal = ({ user }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
-
-
-    // const hanldeUpdateUser = id => {
-    //     console.log(id);
-    //     fetch('https://example.com/profile', {
-    //         method: 'PUT', // or 'POST'
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(),
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             console.log('Success:', data);
-    //         })
-    // }
-
+    const onSubmit = (data) => {
+        console.log(user._id);
+        fetch(`http://localhost:5000/register/${user._id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                handleClose();
+            })
+    }
 
     return (
         <div>
